@@ -59,13 +59,14 @@ test.describe("Locator filters", () => {
       // Arrange:
       const elementRole = "button";
       const parentRole = "row";
-      const parentText = "Row 2!";
+      const parentText = "Row 2";
       const expectedMessage = "You clicked the button! (row 2)";
       const resultsTestId = "dti-results";
 
       const resultsLocator = page.getByTestId(resultsTestId);
       const buttonLocator = page
-        .getByRole(parentRole, { name: parentText })
+        .getByRole(parentRole)
+        .filter({ hasText: parentText })
         .getByRole(elementRole);
 
       // Act:
