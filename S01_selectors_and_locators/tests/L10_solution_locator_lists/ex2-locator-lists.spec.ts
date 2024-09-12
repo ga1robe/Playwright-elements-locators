@@ -2,26 +2,10 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Multiple checkboxes", () => {
   test.beforeEach(async ({ page }) => {
-    // TODO: open the page
-  });
-
-  test.afterEach(async ({ page }) => {
-    // TODO: open the page
-  });
-
-  test("action on multiple checkboxes", async ({ page }) => {
-    // Arrange:
-    // Act:
-    // Assert:
-  });
-});
-
-test.describe("Multiple checkboxes", () => {
-  test.beforeEach(async ({ page }) => {
     await page.goto("/practice/simple-multiple-elements-no-ids.html");
   });
 
-  test("action on multiple checkboxes", async ({ page }) => {
+  test("action on multiple checkboxes (basic)", async ({ page }) => {
     // Arrange:
     const elementRole = "checkbox";
     const resultsTestId = "dti-results";
