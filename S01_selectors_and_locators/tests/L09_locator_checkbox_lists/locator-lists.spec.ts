@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("Locator lists", () => {
+test.describe("Multiple checkboxes", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/practice/simple-multiple-elements-no-ids.html");
   });
@@ -60,6 +60,7 @@ test.describe("Locator lists", () => {
     /* usage of count() method */
     let numberOfFoundCheckboxes = await checkboxLocator.count();
     for (let i = 0; i < numberOfFoundCheckboxes; i++) {
+      /* Sub-act: */
       await checkboxLocator.nth(i).click();
       /* display the text content of the results element */
       console.info("results text content:", await resultsLocator.textContent());
@@ -73,6 +74,7 @@ test.describe("Locator lists", () => {
     /* usage of all() method */
     let i = 1;
     for (const checkbox of await checkboxLocator.all()) {
+      /* Sub-act: */
       await checkbox.click();
       console.info("results text content:", await resultsLocator.textContent());
       /* Sub-assert: */
