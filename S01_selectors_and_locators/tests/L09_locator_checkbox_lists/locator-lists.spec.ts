@@ -63,15 +63,21 @@ test.describe("Locator lists", () => {
       await checkboxLocator.nth(i).click();
       /* display the text content of the results element */
       console.info("results text content:", await resultsLocator.textContent());
+      /* Sub-assert: */
+      await expect(resultsLocator).toHaveText("Checkbox is checked! (Opt "+(i+1)+"!)");
     }
 
     /* Assert: */
     await expect(resultsLocator).toHaveText(expectedMessage1);
 
     /* usage of all() method */
+    let i = 1;
     for (const checkbox of await checkboxLocator.all()) {
       await checkbox.click();
       console.info("results text content:", await resultsLocator.textContent());
+      /* Sub-assert: */
+      await expect(resultsLocator).toHaveText("Checkbox is unchecked! (Opt "+i+"!)");
+      i++;
     }
 
     /* Assert: */
