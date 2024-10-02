@@ -1,4 +1,20 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
+
+test.describe("Multiple checkboxes", () => {
+  test.beforeEach(async ({ page }) => {
+    // TODO: open the page
+  });
+
+  test.afterEach(async ({ page }) => {
+    // TODO: open the page
+  });
+
+  test("action on multiple checkboxes (empty)", async ({ page }) => {
+    // Arrange:
+    // Act:
+    // Assert:
+  });
+});
 
 test.describe("Multiple checkboxes", () => {
   test.beforeEach(async ({ page }) => {
